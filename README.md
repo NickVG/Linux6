@@ -52,7 +52,7 @@
 
 Далее необходимо заменить в: /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg. старое название на новое.
 
-Пересоздаем initrd image, чтобý он знал новое название Volume Group
+Пересоздаем initrd image, чтобы он знал новое название Volume Group
 
 	[root@lvm vagrant]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
