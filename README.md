@@ -73,7 +73,7 @@
 	mkdir /usr/lib/dracut/modules.d/01test
 
 В созданной папке создаём два скрипта:
-module-setup.sh - станавливает модуль и визывает скрипт test.sh
+module-setup.sh - устанавливает модуль и вызывает скрипт test.sh
 
 
 	#!/bin/bash
