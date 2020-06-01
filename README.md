@@ -20,6 +20,7 @@
         touch /.autorelabel
 
 *Способ 3. rw init=/sysroot/bin/bash*
+
 Заменяем ro на rw init=/sysroot/bin/bash - монитруем файловую систему сразу в режиме на запись. Остальное аналогично  примерy 1.
 
 Вместо touch ./autorelabel наверное можно выключить selinux в /etc/selinux/config (SELINUX=permissive), а после загрузки поменять контекст на /etc/shadow и /etc/passwd
