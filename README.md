@@ -20,10 +20,9 @@
         touch /.autorelabel
 
 *Способ 3. rw init=/sysroot/bin/bash*
-
 Заменяем ro на rw init=/sysroot/bin/bash - монитруем файловую систему сразу в режиме на запись. Остальное аналогично  примерy 1.
 
-Вместо touch ./autorelabel наверное можно выключить selinux в /etc/selinux/config (SELINUX=permissive), а после загрузки поменять контекст на /etc/shadow и /etc/passwd
+	Вместо touch ./autorelabel наверное можно выключить selinux в /etc/selinux/config (SELINUX=permissive), а после загрузки поменять контекст на /etc/shadow и /etc/passwd
 
 **Установить систему с LVM, после чего переименовать VG **
 Результаты выполнения ***cat /proc/cmdline, vgs и lvs*** для проверки того, что работа производтся на сервере с поддержкой lvm
