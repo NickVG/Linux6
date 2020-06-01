@@ -2,16 +2,16 @@
 # ДЗ по теме Загрузка Системы
 
 
-**Попасть в систему без пароля несколькими способами**
+## Попасть в систему без пароля несколькими способами
 
-##Способ 1. init=/bin/bash##
+### Способ 1. init=/bin/bash
 с помощью опции init мы задаём какая команда выполнится первой при загрузке системы
 
 	mount -o remount,rw /
 	passwd root
 	touch /.autorelabel
 
-##Способ 2. rd.break##
+### Способ 2. rd.break
 Использование rd.break прерывает процесс загрузки перед тем как управление переходит от initramfs к systemd
 	
 	mount -o remount,rw /sysroot
@@ -19,12 +19,12 @@
         passwd root
         touch /.autorelabel
 
-##Способ 3. rw init=/sysroot/bin/bash##
+### Способ 3. rw init=/sysroot/bin/bash
 Заменяем ro на rw init=/sysroot/bin/bash - монитруем файловую систему сразу в режиме на запись. Остальное аналогично  примерy 1.
 
 	Вместо touch ./autorelabel наверное можно выключить selinux в /etc/selinux/config (SELINUX=permissive), а после загрузки поменять контекст на /etc/shadow и /etc/passwd
 
-**Установить систему с LVM, после чего переименовать VG **
+## Установить систему с LVM, после чего переименовать VG
 Результаты выполнения ***cat /proc/cmdline, vgs и lvs*** для проверки того, что работа производтся на сервере с поддержкой lvm
 
 	[root@lvm vagrant]# vgs
@@ -66,7 +66,7 @@
 	  LogVol01 OtusRoot -wi-ao----   1.50g
 
 
-**Добавить модуль в initrd**
+## Добавить модуль в initrd
 
 Для того чтобы добавить свой модуль создаем папку с именем 01test:
 
